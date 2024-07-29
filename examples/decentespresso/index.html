@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Decent Scale Web SDK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <script src="./script.js" type="module"></script>
+  </head>
+  <style>
+    label {
+      display: block;
+    }
+  </style>
+  <body>
+    <nav>
+      <a href="../../">< back</a>
+    </nav>
+
+    <h1>Decent Scale Web SDK</h1>
+
+    <button id="toggleConnectionButton">connect</button>
+    <button id="powerOffButton" disabled>power off</button>
+
+    <h2>info</h2>
+    <label>firmware version <input id="firmwareVersion" readonly size="3" /> </label>
+    <label>battery <input id="battery" readonly type="number" min="0" max="100" /> </label>
+    <label
+      >is usb?
+      <input id="isUSB" readonly onclick="return false;" type="checkbox" />
+    </label>
+
+    <h2>weight</h2>
+    <button id="tare" disabled>tare</button>
+    <label
+      >weight (grams)
+      <input id="weight" readonly type="number" min="-2" max="2" step="0.1" value="0.0" />
+    </label>
+    <label
+      >is stable?
+      <input id="isStable" readonly onclick="return false;" type="checkbox" />
+    </label>
+    <label>time <input size="7" id="time" readonly value="0:0:0" /></label>
+
+    <h2>led</h2>
+    <label>show weight <input id="showWeight" type="checkbox" /></label>
+    <label>show timer <input id="showTimer" type="checkbox" /></label>
+    <label>
+      weight type
+      <select id="weightType">
+        <option>grams</option>
+        <option>ounces</option>
+      </select>
+    </label>
+
+    <h2>timer</h2>
+    <button id="startTimer" disabled>start</button>
+    <button id="stopTimer" disabled>stop</button>
+    <button id="resetTimer" disabled>reset</button>
+
+    <h2>button taps</h2>
+    <p id="buttonTaps"></p>
+  </body>
+</html>

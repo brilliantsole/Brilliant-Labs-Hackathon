@@ -5,11 +5,10 @@
   "repository": "https://github.com/brilliantsole/Brilliant-Labs-Hackathon.git",
   "author": "Zack Qattan <zack@brilliantsole.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "web-server": "node web-server.js",
-    "bs-server": "node bs-server.js",
-    "hue-server": "yarn kill && node hue-server.js",
-    "kill": "node kill-process.js"
+    "bs-server": "node bs-server.js"
   },
   "dependencies": {
     "@abandonware/noble": "^1.9.2-25",
@@ -17,8 +16,6 @@
     "express": "^4.19.2",
     "ip": "^2.0.1",
     "lodash": "^4.17.21",
-    "mdns": "^2.7.2",
-    "phea": "^1.0.6",
     "socket.io": "^4.7.5",
     "webbluetooth": "^3.2.1",
     "ws": "^8.18.0"

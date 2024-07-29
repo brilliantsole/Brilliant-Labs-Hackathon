@@ -1,4 +1,4 @@
-import DecentScale from "../../lib/decentexpresso/DecentScale.js";
+import DecentScale from "../../../lib/decentespresso/DecentScale.js";
 
 const decentScale = new DecentScale();
 

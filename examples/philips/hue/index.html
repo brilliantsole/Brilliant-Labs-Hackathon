@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Philips Hue</title>
+    <script src="../../../lib/socket.io/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Philips Hue</h1>
+
+    <p id="socketConnection"></p>
+
+    <button id="discoverBridges" hidden>rediscover bridges</button>
+
+    <ol id="bridges">
+      <template id="bridgeTemplate">
+        <li class="bridge">
+          <b class="name"></b>
+          <ul>
+            <li>id: <b class="id"></b></li>
+            <li>ip: <b class="ip"></b></li>
+            <li>credentials: <b class="credentials"></b></li>
+            <button class="getCredentials" hidden>get credentials (press bridge button first)</button>
+            <li>lights: <b class="lights"></b></li>
+            <li>group: <b class="group"></b></li>
+            <button class="getGroup" hidden>refresh group</button>
+          </ul>
+          <ol class="lightControls"></ol>
+        </li>
+      </template>
+      <template id="lightTemplate">
+        <li class="light">
+          <span class="name"></span>:
+          <input type="color" />
+        </li>
+      </template>
+    </ol>
+  </body>
+  <script src="./script.js"></script>
+</html>

@@ -1,4 +1,4 @@
-import Frame from "../../../../lib/brilliantlabs/frame/Frame.js";
+import Frame from "../../../lib/brilliantlabs/frame/Frame.js";
 
 const frame = new Frame();
 window.frame = frame;

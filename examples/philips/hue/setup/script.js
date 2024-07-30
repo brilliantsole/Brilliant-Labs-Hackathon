@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io("https://192.168.1.44:8443");
 socket.on("connect", () => {
   console.log("connection opened");
   socketConnectionContainer.innerText = "connected to server";

@@ -16,5 +16,45 @@
     </nav>
 
     <h1>Frame Web SDK | Brilliant Labs</h1>
+
+    <button id="addBSDevice">add insole</button>
+    <input type="range" min="0" step="0.001" max="1" id="balance" style="width: 200px" />
+    <br />
+
+    <button id="connect">connect</button>
+    <button id="disconnect" disabled>disconnect</button>
+
+    <label>battery level: <span id="batteryLevel"></span></label>
+
+    <h2>Text Editor</h2>
+    <label>text: <input type="text" id="text" disabled /></label>
+    <label>
+      color:
+      <select id="textColor"></select>
+    </label>
+
+    <label>text x: <input type="range" min="1" max="640" id="textX" /> (<span id="textXSpan"></span>px)</label>
+    <label>text y: <input type="range" min="1" max="400" id="textY" /> (<span id="textYSpan"></span>px)</label>
+    <label>
+      spacing:
+      <input type="range" min="-100" max="100" id="textSpacing" />
+      (<span id="textSpacingSpan"></span>px)
+    </label>
+
+    <br />
+    <br />
+
+    <h2>samples</h2>
+    <div id="samples"></div>
+
+    <textarea id="lua" rows="5" cols="80"></textarea>
+    <button id="runLua" disabled>run lua</button>
+
+    <h2>responses</h2>
+    <button id="clear">clear history</button>
+    <div
+      id="responses"
+      style="display: flex; flex-direction: column-reverse; max-height: 300px; overflow-y: scroll"
+    ></div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import * as BS from "../../lib/brilliantsole/brilliantsole.module.js";
+import * as BS from "../../../../lib/brilliantsole/brilliantsole.module.js";
 window.BS = BS;
 console.log(BS);
 

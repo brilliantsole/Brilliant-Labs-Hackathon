@@ -10,6 +10,7 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@types/web-bluetooth": "^0.0.20",
     "express": "^4.19.2",
     "ip": "^2.0.1"
   }

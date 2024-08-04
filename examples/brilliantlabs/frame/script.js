@@ -1,30 +1,8 @@
 import Frame from "../../../lib/brilliantlabs/frame/Frame.js";
-import * as BS from "../../../lib/brilliantsole/brilliantsole.module.js";
-
-const addBSDeviceButton = document.getElementById("addBSDevice");
-addBSDeviceButton.addEventListener("click", () => BS.Device.Connect());
 
 const frame = new Frame();
 window.frame = frame;
 console.log(frame);
-
-const devicePair = BS.DevicePair.shared;
-const balanceInput = document.getElementById("balance");
-console.log(balanceInput);
-devicePair.addEventListener("pressure", (event) => {
-  console.log(event);
-  const { normalizedCenter } = event.message.pressure;
-  if (normalizedCenter && normalizedCenter.x) {
-    balanceInput.value = normalizedCenter.x;
-    drawBalance(normalizedCenter.x);
-  }
-});
-
-function drawBalance(x) {
-  const command = `frame.display.text('o', ${Math.floor(x * 200)}, 200);frame.display.show()`;
-  luaInput.value = command;
-  runLuaButton.click();
-}
 
 const connectButton = document.getElementById("connect");
 connectButton.addEventListener("click", () => {
@@ -150,7 +128,7 @@ if (localStorage.getItem("responses")) {
 
 const samplesContainer = document.getElementById("samples");
 const samples = {
-  "write+display text": `frame.display.text('Hello world', 50, 100);frame.display.show()`,
+  "write+display text": `frame.display.text('Hello world', 50, 100)\nframe.display.show()`,
   "write text": `frame.display.text('Hello world', 50, 100)`,
   "show text": `frame.display.show()`,
   "clear text": `frame.display.text(" ", 50, 100);frame.display.show()`,
@@ -159,8 +137,8 @@ Object.entries(samples).forEach(([label, script]) => {
   const sampleButton = document.createElement("button");
   sampleButton.innerText = label;
   sampleButton.addEventListener("click", (event) => {
-    if (event.shiftKey) {
-      luaInput.value += `;${script}`;
+    if (event.shiftKey && luaInput.value.length > 0) {
+      luaInput.value += `\n${script}`;
     } else {
       luaInput.value = script;
     }
@@ -272,4 +250,3 @@ function throttle(mainFunction, delay) {
 }
 
 writeText = throttle(writeText, 100);
-drawBalance = throttle(drawBalance, 100);
